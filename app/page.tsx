@@ -2,10 +2,14 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-    title: "Главная страница",
-    description: "Стартовая страница",
-};
+export async function generateMetaData(): Promise<Metadata> {
+    // ...
+    return {
+        title: "Главная страница",
+        description: "Стартовая страница",
+        keywords: "Проект, блог, домашнее задание, учёба",
+    };
+}
 
 export default function Home() {
     return (
