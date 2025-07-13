@@ -1,0 +1,13 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-clean-order"],
+
+  "plugins": ["stylelint-order", "@stylistic/stylelint-plugin"],
+
+  "rules": {
+    "color-hex-length": "long",
+
+    "@stylistic/color-hex-case": "lower",
+
+    "@stylistic/indentation": 4
+  }
+}
