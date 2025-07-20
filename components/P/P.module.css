@@ -1,0 +1,19 @@
+.p {
+    margin: 0;
+    font-weight: 400;
+}
+
+.sm {
+    font-size: 12px;
+    line-height: 100%;
+}
+
+.md {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.lg {
+    font-size: 18px;
+    line-height: 32px;
+}

@@ -1,13 +1,15 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-clean-order"],
+    "extends": ["stylelint-config-standard", "stylelint-config-clean-order"],
 
-  "plugins": ["stylelint-order", "@stylistic/stylelint-plugin"],
+    "plugins": ["stylelint-order", "@stylistic/stylelint-plugin"],
 
-  "rules": {
-    "color-hex-length": "long",
+    "rules": {
+        "color-hex-length": "long",
 
-    "@stylistic/color-hex-case": "lower",
+        "@stylistic/color-hex-case": "lower",
 
-    "@stylistic/indentation": 4
-  }
+        "@stylistic/indentation": 4,
+
+        "selector-class-pattern": "^[a-z0-9]+(_[A-Za-z0-9]+)*$"
+    }
 }
