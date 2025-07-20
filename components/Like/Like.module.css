@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.wrapper svg {
+    transition: all 0.3s ease;
+}
+
+.like {
+    font-size: 12px;
+    line-height: 100%;
+    color: var(--black-20);
+}
