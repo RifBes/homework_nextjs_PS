@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import parse from "html-react-parser";
 
-import { BlogCardProps } from "./BlogCard.props.";
+import { BlogCardProps } from "./BlogCard.props";
 import { Like, P, Htag } from "..";
 
 import IconArrow from "./arrow.svg";
@@ -18,7 +18,8 @@ export const BlogCard = ({
     date_publish,
     themes,
     image,
-    priority = true,
+    like_id,
+    priority = false,
     ...props
 }: BlogCardProps): React.ReactElement => {
     return (
@@ -54,8 +55,9 @@ export const BlogCard = ({
                             <span>{date_publish}</span>
                         </div>
                     </div>
-                    <div>
-                        <Like>{count_likes}</Like>
+                    <div className={styles.like_wrapper}>
+                        {count_likes}
+                        <Like id={like_id} inside={false} />
                     </div>
                 </div>
                 {/* основная инфа */}
