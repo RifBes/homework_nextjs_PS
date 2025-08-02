@@ -1,10 +1,12 @@
 .like {
+    pointer-events: none;
     display: inline-block;
     border: none;
     background-color: transparent;
 }
 
 .like_inside {
+    pointer-events: auto;
     cursor: pointer;
 
     padding: 16px;
