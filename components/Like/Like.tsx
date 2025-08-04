@@ -1,13 +1,58 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { LikeProps } from "./Like.props";
 import styles from "./Like.module.css";
 import LikeIcon from "./like.svg";
+import cn from "classnames";
 
-export const Like = ({ children }: LikeProps): React.ReactElement => {
+export const Like = ({
+    inside,
+    id,
+    ...props
+}: LikeProps): React.ReactElement => {
+    const base_url = "https://jsonplaceholder.typicode.com/posts/";
+    const [isLiked, setIsLiked] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
+
+    const makeLike = async () => {
+        const url = base_url + id;
+        setLoading(true);
+        try {
+            const newState = !isLiked;
+            const res = await fetch(url, {
+                method: "PATCH",
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8",
+                },
+                body: JSON.stringify({
+                    newState,
+                }),
+            });
+            const json = await res.json();
+            const status = json.newState;
+            setIsLiked(status);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
-        <div className={styles.wrapper}>
-            <span className={styles.like}>{children}</span>
-            <LikeIcon />
-        </div>
+        <button
+            {...props}
+            className={cn(styles.like, {
+                [styles.like_inside]: inside,
+                [styles.is_liked]: isLiked,
+                [styles.loading]: loading,
+            })}
+            disabled={loading}
+            onClick={makeLike}
+        >
+            <i className={styles.svg}>
+                <LikeIcon />
+            </i>
+        </button>
     );
 };

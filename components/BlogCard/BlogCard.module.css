@@ -111,3 +111,15 @@
 .link:hover svg {
     stroke: var(--primary-hover);
 }
+
+.like_wrapper {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+
+    font-size: 12px;
+    line-height: 100%;
+    color: var(--black-20);
+
+    transition: all 0.3s ease;
+}

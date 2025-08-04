@@ -1,16 +1,52 @@
-.wrapper {
-    display: flex;
-    gap: 2px;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.wrapper svg {
-    transition: all 0.3s ease;
-}
-
 .like {
-    font-size: 12px;
-    line-height: 100%;
-    color: var(--black-20);
+    pointer-events: none;
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+}
+
+.like_inside {
+    pointer-events: auto;
+    cursor: pointer;
+
+    padding: 16px;
+    border: 1px solid var(--black-border);
+    border-radius: 100%;
+
+    background-color: var(--white);
+
+    transition: all 0.3s ease;
+}
+
+.like_inside:hover {
+    background-color: var(--black-border);
+}
+
+.like_inside svg {
+    stroke: var(--black-border);
+}
+
+.like_inside:hover svg {
+    stroke: var(--white);
+}
+
+.like_inside.is_liked {
+    background-color: var(--black-border);
+}
+
+.like_inside.is_liked:hover {
+    background-color: var(--black);
+}
+
+.like_inside.is_liked svg {
+    stroke: var(--white);
+}
+
+.svg {
+    display: flex;
+}
+
+.loading {
+    pointer-events: none;
+    opacity: 0.5;
 }

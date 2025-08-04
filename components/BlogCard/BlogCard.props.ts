@@ -11,4 +11,5 @@ export interface BlogCardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivE
     themes: string[]; // тем может быть несколько
     image: string | StaticImageData;
     priority?: boolean; //предварительная загрузка. Если изображение большое (как с хаски), то появляется предупреждение
+    like_id: string;
 }
