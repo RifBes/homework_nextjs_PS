@@ -30,9 +30,9 @@ export default function Home() {
                 ></BlogCard>
 
                 <span>Лайк для карточки</span>
-                <Like id="1" inside={false} />
+                <Like id="1" isInside={false} />
                 <span>Лайк внутри поста</span>
-                <Like id="12" inside={true} />
+                <Like id="12" isInside={true} />
             </main>
         </div>
     );

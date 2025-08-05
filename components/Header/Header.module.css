@@ -1,0 +1,32 @@
+.header {
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: calc(1126px - 30px);
+    margin-inline: auto;
+    padding-block: 23px;
+    padding-inline: 15px;
+}
+
+.header__title {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 100%;
+    color: inherit;
+}
+
+.svg {
+    display: flex;
+}
+
+.svg svg {
+    transition: all 0.3s ease;
+}
+
+.header__git:hover .svg svg {
+    stroke: var(--black);
+}
