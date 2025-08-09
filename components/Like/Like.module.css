@@ -5,7 +5,7 @@
     background-color: transparent;
 }
 
-.like_inside {
+.like__inside {
     pointer-events: auto;
     cursor: pointer;
 
@@ -18,27 +18,27 @@
     transition: all 0.3s ease;
 }
 
-.like_inside:hover {
+.like__inside:hover {
     background-color: var(--black-border);
 }
 
-.like_inside svg {
+.like__inside svg {
     stroke: var(--black-border);
 }
 
-.like_inside:hover svg {
+.like__inside:hover svg {
     stroke: var(--white);
 }
 
-.like_inside.is_liked {
+.like__inside.like__active {
     background-color: var(--black-border);
 }
 
-.like_inside.is_liked:hover {
+.like__inside.like__active:hover {
     background-color: var(--black);
 }
 
-.like_inside.is_liked svg {
+.like__inside.like__active svg {
     stroke: var(--white);
 }
 

@@ -7,16 +7,16 @@ import LikeIcon from "./like.svg";
 import cn from "classnames";
 
 export const Like = ({
-    inside,
+    isInside,
     id,
     ...props
 }: LikeProps): React.ReactElement => {
-    const base_url = "https://jsonplaceholder.typicode.com/posts/";
+    const baseUrl = "https://jsonplaceholder.typicode.com/posts/";
     const [isLiked, setIsLiked] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
 
     const makeLike = async () => {
-        const url = base_url + id;
+        const url = baseUrl + id;
         setLoading(true);
         try {
             const newState = !isLiked;
@@ -43,8 +43,8 @@ export const Like = ({
         <button
             {...props}
             className={cn(styles.like, {
-                [styles.like_inside]: inside,
-                [styles.is_liked]: isLiked,
+                [styles.like__inside]: isInside,
+                [styles.like__active]: isLiked,
                 [styles.loading]: loading,
             })}
             disabled={loading}

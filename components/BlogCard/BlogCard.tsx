@@ -39,7 +39,7 @@ export const BlogCard = ({
             <div className={styles.bottom}>
                 {/* темы, дата публикации и лайки */}
                 <div className={styles.head}>
-                    <div className={styles.head_left}>
+                    <div className={styles.head__left}>
                         <div className={styles.themes}>
                             {themes.map((theme, index) => (
                                 <React.Fragment key={index}>
@@ -55,9 +55,9 @@ export const BlogCard = ({
                             <span>{date_publish}</span>
                         </div>
                     </div>
-                    <div className={styles.like_wrapper}>
+                    <div className={styles.like__wrapper}>
                         {count_likes}
-                        <Like id={like_id} inside={false} />
+                        <Like id={like_id} isInside={false} />
                     </div>
                 </div>
                 {/* основная инфа */}
@@ -66,7 +66,7 @@ export const BlogCard = ({
                         {title}
                     </Htag>
                     <div className={styles.description}>
-                        <P className={styles.custom_P}>{parse(description)}</P>
+                        <P className={styles.customp}>{parse(description)}</P>
                     </div>
                 </div>
                 {/* время чтения и переход */}
