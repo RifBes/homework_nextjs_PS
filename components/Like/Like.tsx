@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { LikeProps } from "./Like.props";
 import styles from "./Like.module.css";
 import LikeIcon from "./like.svg";
+import { BASE_URL } from "../../constants";
 import cn from "classnames";
 
 export const Like = ({
@@ -11,7 +12,7 @@ export const Like = ({
     id,
     ...props
 }: LikeProps): React.ReactElement => {
-    const baseUrl = "https://jsonplaceholder.typicode.com/posts/";
+    const baseUrl = BASE_URL;
     const [isLiked, setIsLiked] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
 

@@ -1,9 +1,14 @@
-.page {
-    padding: 50px 0;
+.main {
+    display: grid;
+    grid-template-areas: ". cards .";
+    grid-template-columns: auto minmax(300px, 1116px) auto;
 }
 
-.main {
-    max-width: calc(1126px - 30px);
-    margin-inline: auto;
+.wrapper {
+    display: grid;
+    grid-area: cards;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 33px;
+
     padding-inline: 10px;
 }
