@@ -1,8 +1,8 @@
 import { PostItem } from "@/interfaces/posts.interface";
-import { API } from "./api";
+import { BASE_URL } from "@/constants";
 
 export async function getPost(): Promise<PostItem[]> {
-    const res = await fetch(API.posts.get);
+    const res = await fetch(BASE_URL + "/posts/");
 
     if (!res.ok) {
         return [];
