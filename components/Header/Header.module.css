@@ -18,15 +18,3 @@
     line-height: 100%;
     color: inherit;
 }
-
-.svg {
-    display: flex;
-}
-
-.svg svg {
-    transition: all 0.3s ease;
-}
-
-.header__git:hover .svg svg {
-    stroke: var(--black);
-}
