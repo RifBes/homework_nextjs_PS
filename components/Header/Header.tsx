@@ -1,8 +1,7 @@
-import React from "react";
 import styles from "./Header.module.css";
 
-import GitIcon from "./GithubIcon.svg";
 import Link from "next/link";
+import { GitHubLink } from "../GithubLink/GithubLink";
 
 export const Header = (): React.ReactElement => {
     return (
@@ -10,17 +9,7 @@ export const Header = (): React.ReactElement => {
             <Link className={styles.header__title} href="/">
                 .my_blog
             </Link>
-            <div className={styles.header__git}>
-                <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/RifBes"
-                >
-                    <i className={styles.svg}>
-                        <GitIcon />
-                    </i>
-                </Link>
-            </div>
+            <GitHubLink />
         </header>
     );
 };

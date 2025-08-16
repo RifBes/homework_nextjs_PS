@@ -1,0 +1,11 @@
+.svg {
+    display: flex;
+}
+
+.svg svg {
+    transition: all 0.3s ease;
+}
+
+.svg:hover svg {
+    stroke: var(--black);
+}
