@@ -8,6 +8,7 @@ import { Like, P, Htag } from "..";
 import IconArrow from "./arrow.svg";
 
 import styles from "./BlogCard.module.css";
+import Link from "next/link";
 
 export const BlogCard = ({
     href,
@@ -72,10 +73,10 @@ export const BlogCard = ({
                 {/* время чтения и переход */}
                 <div className={styles.footer}>
                     <span>{time_read}</span>
-                    <a className={styles.link} href={href}>
+                    <Link className={styles.link} href={`post/${href}`}>
                         Читать
                         <IconArrow />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

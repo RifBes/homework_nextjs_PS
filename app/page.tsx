@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 import { BlogCard } from "@/components";
 import cat from "../public/assets/cat.jpg";
-import { getPost } from "@/api/posts";
+import { getPosts } from "@/api/posts";
 import React from "react";
 
 export async function generateMetaData(): Promise<Metadata> {
@@ -15,7 +15,7 @@ export async function generateMetaData(): Promise<Metadata> {
 }
 
 export default async function Home() {
-    const pages = await getPost();
+    const pages = await getPosts();
     return (
         <main className={styles.main}>
             <div className={styles.wrapper}>
@@ -27,7 +27,7 @@ export default async function Home() {
                             date_publish="1 месяц назад"
                             count_likes={4}
                             time_read="3 минуты"
-                            href="#"
+                            href={item.id}
                             like_id={item.userId}
                             title={item.title}
                             priority={true}
