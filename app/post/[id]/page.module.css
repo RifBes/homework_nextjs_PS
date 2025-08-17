@@ -1,0 +1,10 @@
+.wrapper {
+    display: grid;
+    grid-template-areas: ". card .";
+    grid-template-columns: auto minmax(300px, 1116px) auto;
+}
+
+.content {
+    grid-area: card;
+    padding-inline: 10px;
+}
