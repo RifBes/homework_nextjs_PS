@@ -5,6 +5,51 @@
 }
 
 .content {
+    max-width: 660px;
     grid-area: card;
     padding-inline: 10px;
+}
+
+.title {
+    font-size: 34px;
+    font-size: 700;
+    color: var(--black);
+    margin-bottom: 12px;
+}
+
+.info {
+    color: var(--black-20);
+    font-size: 12px;
+    display: flex;
+    margin-bottom: 12px;
+    gap: 10px;
+}
+
+.info__like {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.image__wrapper {
+    margin-bottom: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.image {
+    display: block;
+}
+
+.body {
+    font-size: 18px;
+    color: var(--black-20);
+    line-height: 32px;
+    margin-bottom: 25px;
+}
+
+.like {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
