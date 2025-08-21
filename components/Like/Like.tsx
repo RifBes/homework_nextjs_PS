@@ -17,11 +17,11 @@ export const Like = ({
     const [loading, setLoading] = useState<boolean>(false);
 
     const makeLike = async () => {
-        const url = baseUrl + id;
+        const url = baseUrl;
         setLoading(true);
         try {
             const newState = !isLiked;
-            const res = await fetch(url + "/posts", {
+            const res = await fetch(url + "/posts/" + id, {
                 method: "PATCH",
                 headers: {
                     "Content-type": "application/json; charset=UTF-8",
