@@ -1,0 +1,29 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    padding: 20px 30px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.input__error {
+    border-color: red;
+}
+
+.input::placeholder {
+    color: #4e5d7c;
+    opacity: 0.5;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}

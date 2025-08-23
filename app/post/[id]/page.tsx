@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { Comments, Like } from "@/components";
 import Image from "next/image";
 import { getComments } from "@/api/comments";
+import { Form } from "@/components/Form/Form";
 
 type postByIdProps = Promise<{ id: string }>;
 
@@ -57,6 +58,7 @@ export default async function DetailPost({
                     <Like isInside={true} id={id} />
                 </div>
                 <Comments className={styles.comment} comments={comments} />
+                <Form className={styles.form} id={post.id} />
             </div>
         </div>
     );
