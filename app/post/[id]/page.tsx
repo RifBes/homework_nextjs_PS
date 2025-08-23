@@ -3,8 +3,9 @@ import { Metadata } from "next";
 import React from "react";
 import parse from "html-react-parser";
 import styles from "./page.module.css";
-import { Like } from "@/components";
+import { Comments, Like } from "@/components";
 import Image from "next/image";
+import { getComments } from "@/api/comments";
 
 type postByIdProps = Promise<{ id: string }>;
 
@@ -29,6 +30,7 @@ export default async function DetailPost({
 }) {
     const { id } = await params;
     const post = await getPost(id);
+    const comments = await getComments(id);
     return (
         <div className={styles.wrapper}>
             <div className={styles.content}>
@@ -54,6 +56,7 @@ export default async function DetailPost({
                     <span>Понравилось? Жми</span>
                     <Like isInside={true} id={id} />
                 </div>
+                <Comments className={styles.comment} comments={comments} />
             </div>
         </div>
     );

@@ -3,3 +3,5 @@ export * from './P/P';
 export * from './BlogCard/BlogCard';
 export * from './Like/Like';
 export * from './Header/Header';
+export * from './Comments/Comments';
+export * from './Comment/Comment';
