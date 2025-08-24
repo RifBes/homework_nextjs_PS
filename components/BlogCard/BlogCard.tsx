@@ -1,14 +1,13 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import parse from "html-react-parser";
-
 import { BlogCardProps } from "./BlogCard.props";
 import { Like, P, Htag } from "..";
-
 import IconArrow from "./arrow.svg";
-
 import styles from "./BlogCard.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export const BlogCard = ({
     href,
@@ -23,13 +22,37 @@ export const BlogCard = ({
     priority = false,
     ...props
 }: BlogCardProps): React.ReactElement => {
+    const variants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                duration: 0.3,
+            },
+        },
+        hidden: {
+            opacity: 0,
+            y: 20,
+            scale: 0.8,
+        },
+    };
+
     return (
-        <div className={styles.wrapper} {...props}>
+        <motion.div
+            className={styles.wrapper}
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            {...props}
+        >
             {/* Картинка */}
             <div className={styles.top}>
                 <Image
                     priority={priority}
-                    unoptimized={true} //чтобы картинка с другого домена загрузилась (когда вставляю просто ссылку)
+                    unoptimized={true}
                     fill={true}
                     src={image}
                     className={styles.image}
@@ -79,6 +102,6 @@ export const BlogCard = ({
                     </Link>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
