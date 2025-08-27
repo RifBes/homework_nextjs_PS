@@ -41,7 +41,7 @@ export const BlogCard = ({
     };
 
     return (
-        <motion.div
+        <motion.article
             className={styles.wrapper}
             variants={variants}
             initial="hidden"
@@ -59,31 +59,43 @@ export const BlogCard = ({
                     alt={title}
                 />
             </div>
+
             {/* Низ с текстом */}
             <div className={styles.bottom}>
                 {/* темы, дата публикации и лайки */}
                 <div className={styles.head}>
                     <div className={styles.head__left}>
-                        <div className={styles.themes}>
+                        <div className={styles.themes} aria-label="Темы статьи">
                             {themes.map((theme, index) => (
                                 <React.Fragment key={index}>
                                     <span>{theme}</span>
                                     {index !== themes.length - 1 && (
-                                        <span>|</span>
+                                        <span aria-hidden="true">|</span>
                                     )}
                                 </React.Fragment>
                             ))}
                         </div>
                         <div className={styles.date}>
-                            <span>·</span>
-                            <span>{date_publish}</span>
+                            <span aria-hidden="true">·</span>
+                            <time dateTime={date_publish}>{date_publish}</time>
                         </div>
                     </div>
-                    <div className={styles.like__wrapper}>
+                    <div
+                        className={styles.like__wrapper}
+                        aria-label={`${count_likes} лайков`}
+                    >
+                        <span className={styles.visuallyHidden}>
+                            Количество лайков:
+                        </span>
                         {count_likes}
-                        <Like id={like_id} isInside={false} />
+                        <Like
+                            id={like_id}
+                            isInside={false}
+                            aria-label="Поставить лайк"
+                        />
                     </div>
                 </div>
+
                 {/* основная инфа */}
                 <div className={styles.main}>
                     <Htag tag="h2" className={styles.title}>
@@ -93,15 +105,25 @@ export const BlogCard = ({
                         <P className={styles.customp}>{parse(description)}</P>
                     </div>
                 </div>
+
                 {/* время чтения и переход */}
                 <div className={styles.footer}>
-                    <span>{time_read}</span>
-                    <Link className={styles.link} href={`post/${href}`}>
+                    <span aria-label={`Время чтения: ${time_read}`}>
+                        <span className={styles.visuallyHidden}>
+                            Время чтения:
+                        </span>
+                        {time_read}
+                    </span>
+                    <Link
+                        className={styles.link}
+                        href={`post/${href}`}
+                        aria-label={`Читать статью: ${title}`}
+                    >
                         Читать
-                        <IconArrow />
+                        <IconArrow aria-hidden="true" />
                     </Link>
                 </div>
             </div>
-        </motion.div>
+        </motion.article>
     );
 };

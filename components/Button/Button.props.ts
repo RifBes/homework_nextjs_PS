@@ -1,6 +1,7 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
-
-export interface ButtonProps extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-    type?: 'button' | 'submit' | 'reset';
-    children: ReactNode;
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    children: React.ReactNode;
+    type?: "button" | "submit" | "reset";
+    disabled?: boolean;
+    loading?: boolean;
+    ariaLabel?: string;
 }

@@ -55,6 +55,7 @@ export const Form = ({ id, className, ...props }: FormProps) => {
         <form
             onSubmit={handleSubmit(onSubmit)}
             {...props}
+            aria-labelledby="form-title"
             className={cn(className, styles.form)}
         >
             <Input

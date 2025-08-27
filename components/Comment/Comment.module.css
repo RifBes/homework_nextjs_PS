@@ -18,3 +18,34 @@
     margin-top: 10px;
     color: var(--black-30);
 }
+
+.email:hover {
+    color: #2c5282;
+    text-decoration: underline;
+}
+
+.email:focus {
+    border-radius: 4px;
+    outline: 2px solid #3182ce;
+    outline-offset: 2px;
+}
+
+.body p {
+    margin: 0;
+}
+
+@media (width <= 768px) {
+    .wrapper {
+        padding: 12px;
+    }
+
+    .top {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
+
+    .top span {
+        display: none;
+    }
+}

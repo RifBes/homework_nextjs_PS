@@ -9,3 +9,59 @@
 .svg:hover svg {
     stroke: var(--black);
 }
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+    border-radius: 6px;
+
+    color: #6b7280;
+
+    transition: all 0.2s ease;
+}
+
+.link:hover {
+    transform: translateY(-1px);
+    color: #1f2937;
+    background-color: #f3f4f6;
+}
+
+.link:focus {
+    color: #1f2937;
+    background-color: #f3f4f6;
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.visuallyHidden {
+    position: absolute;
+
+    overflow: hidden;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+
+    clip: rect(0, 0, 0, 0);
+}
+
+.link {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
