@@ -1,16 +1,66 @@
 .button {
-    background-color: #303030;
-    font-family: inherit;
-    color: var(--white);
+    cursor: pointer;
+
     padding: 15px 44px;
     border: none;
     border-radius: 8px;
-    font-weight: 600;
+
+    font-family: inherit;
     font-size: 15px;
-    cursor: pointer;
+    font-weight: 600;
+    color: var(--white);
+
+    background-color: #303030;
+
     transition: all 0.3s ease;
 }
 
 .button:hover {
     background-color: #535353;
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(66 153 225 / 50%);
+}
+
+.button__disabled {
+    cursor: not-allowed;
+    border-color: #e2e8f0;
+    color: #a0aec0;
+    background-color: #e2e8f0;
+}
+
+.button__disabled.button__outline {
+    border-color: #e2e8f0;
+    color: #a0aec0;
+    background-color: transparent;
+}
+
+.button__loading {
+    cursor: wait;
+}
+
+.loader {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentcolor;
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.text__hidden {
+    visibility: hidden;
 }

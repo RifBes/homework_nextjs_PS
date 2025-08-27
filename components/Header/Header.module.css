@@ -1,4 +1,4 @@
-.header {
+.header nav {
     z-index: 10;
 
     display: flex;
@@ -17,4 +17,9 @@
     font-weight: 300;
     line-height: 100%;
     color: inherit;
+}
+
+.header__title:focus {
+    outline: 2px solid #2d3135;
+    outline-offset: 4px;
 }

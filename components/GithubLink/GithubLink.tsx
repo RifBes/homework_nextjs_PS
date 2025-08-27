@@ -8,11 +8,22 @@ import styles from "./GithubLink.module.css";
 
 export function GitHubLink() {
     const { link } = useContext(GithubContext) || {};
+
     return link ? (
-        <Link target="_blank" rel="noopener noreferrer" href={link}>
-            <i className={styles.svg}>
+        <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href={link}
+            className={styles.link}
+            aria-label="Посмотреть исходный код на GitHub (откроется в новой вкладке)"
+            title="Исходный код на GitHub"
+        >
+            <i className={styles.svg} aria-hidden="true">
                 <GitIcon />
             </i>
+            <span className={styles.visuallyHidden}>
+                Посмотреть исходный код на GitHub (откроется в новой вкладке)
+            </span>
         </Link>
     ) : null;
 }

@@ -50,3 +50,43 @@
     pointer-events: none;
     opacity: 0.5;
 }
+
+.visuallyHidden {
+    position: absolute;
+
+    overflow: hidden;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+
+    clip: rect(0, 0, 0, 0);
+}
+
+.like:focus {
+    outline: 2px solid #4d90fe;
+    outline-offset: 2px;
+}
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.error {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+
+    margin-top: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    font-size: 12px;
+    color: #c62828;
+
+    background: #ffebee;
+}

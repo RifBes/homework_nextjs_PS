@@ -6,10 +6,12 @@ import { GitHubLink } from "../GithubLink/GithubLink";
 export const Header = (): React.ReactElement => {
     return (
         <header className={styles.header}>
-            <Link className={styles.header__title} href="/">
-                .my_blog
-            </Link>
-            <GitHubLink />
+            <nav aria-label="Основная навигация">
+                <Link className={styles.header__title} href="/">
+                    .my_blog
+                </Link>
+                <GitHubLink />
+            </nav>
         </header>
     );
 };
